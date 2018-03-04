@@ -1,0 +1,7 @@
+*****Jake Lewandowski Weekly Report (Week of 2/25/2018)*****
+
+We now have access to all of Bento's code. This is great as we can now set up our machines to be able to run the python code.
+I successfully installed Pytorch on my machine and notified Heather that I am now able to run Bento's code. Alex is having some 
+trouble with the installation, but I will help him next time we meet. Next week is a big week, as we can now play around with the
+toy images that are on the github repository. We also need to find a solution to the "blob" problem as described by Heather. Probably
+a week or 2 away from being able to scale the project to be run on a super computer.
