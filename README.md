@@ -3,9 +3,9 @@ Respository for Capstone 2018, ICEBERG project.
 
 General Folder contains:
   
-  -Document containing list of questions for Professor Jha and Professor Turilli
+    -Document containing list of questions for Professor Jha and Professor Turilli
   
-  -Folder containing weekly reports for each member
+    -Folder containing weekly reports for each member
   
  Moulin Discharge UC Folder Contains:
     
