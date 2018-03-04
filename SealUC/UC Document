@@ -1,1 +1,23 @@
+UC-3: Biological Feature Detection
+This use case involves creating a pipeline to identify biological life in an image of the Arctic. The user will take a set of images,
+log into the head node of a supercomputer, submit the job to the batch scheduler, wait for the compute node to process the pipline 
+(analyze the image), return an updated image and a confimation if biological life is present or not in the image to the user.
+The set of images will be analyzed in parallel in order for very large sets to be analyzed effciently.
 
+Actors:
+User (initiating), Head Node (participating), Batch Scheduler (participating), Compute Node (participating), 
+Deep Learning System (participating)
+
+Preconditions:
+    -High resolution satellite image which may or may not contain Arctic biological life.
+
+Postconditions:
+-Updated image with identified biological life.
+-Updated neural network.
+
+Flow of events for main success scenario:
+  -User logs into head node to access HPC system.
+  -User submits job with set of images to batch scheduler. 
+  -Scheduler finds optimal time for job to be processed.
+  -Scheduler sends job to compute node.
+  -Compute node executes job, analyzes the images, creates output file and sends file back to user.
