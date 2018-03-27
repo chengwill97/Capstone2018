@@ -1,0 +1,27 @@
+***How to run code
+
+1. With Python via terminal do:
+	import os
+	class_names = [x[1] for x in os.walk('./nn_images/training')][0]
+
+2. Start training with:
+	os.system('python prep_train.py')
+	os.system('python pt_train.py')
+
+	*Now training should be set up and saved to an nn model
+
+3. Prediction can now begin with:
+	os.system('mkdir classified_images')
+	for x in class_names:
+    		dir = './classified_images/' + x
+    		%mkdir -v $dir
+
+	*This creates the directory for output
+
+4. Now:
+	os.system('python pt_predict.py -class_names 'crabeater' 'weddell' 'emperor' 'pack-ice' 'other'')
+
+	*This makes predictions on you ./images directory and places the results 	in the classified_images directory
+
+5. Now run the blob detector:
+	os.system('python blob_detector.py') 
