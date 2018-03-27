@@ -1,0 +1,17 @@
+Transferring files to Bridges via Globus
+
+1. Go to: https://www.globus.org/app/transfer?destination_id=94457f1c-3174-11e8-b907-0ac6873fc732&destination_path=%2F~%2FDesktop%2FICEBERG-code-master%2FCode%2FSeals%2F&origin_id=c918674a-0020-11e6-a717-22000bf2d559&origin_path=%2F~%2FICEBERG-code%2FToy_example%2F
+
+2. In terminal change directory to globusconnectpersonal-n.m
+
+3. %./globusconnect &
+
+4. Choose one endpoint as 'PCS Bridges with XSEDE authentication'
+
+5. Choose other enpoint as your machine
+
+6. Transfer files into Bridges directories.
+
+	*Available diretories: Home directory /home/username
+				Pylon2 directory /pylon2/groupname/username
+				Pylon5 directory /pylon5/groupname/username
