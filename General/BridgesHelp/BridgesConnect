@@ -1,0 +1,11 @@
+***Connecting to Bridges via ssh and XSEDE
+
+1. Set up Duo 2FA on phone with XSEDE account.
+
+2. ssh to the XSEDE Single sign on hub with command : 
+	%ssh -l XUPusername login.xsede.org
+
+3. Enter XSEDE UP password and choose 2FA option
+
+4. Use gsissh command to connect to Bridges:
+	%gsissh bridges
