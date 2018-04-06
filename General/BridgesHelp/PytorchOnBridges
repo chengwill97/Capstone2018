@@ -1,15 +1,7 @@
-***Gettting Pytorch on bridges
+--Getting pytorch on bridges
 
-1. module load gcc
-
-2. module load python/2.7.11_gcc_np1.11
-
+1. module load python3
+2. pip3 install --user torch torchvision *one time installation on user acc.
 3. module load cuda
-
-4. module load torch
-
-5. module load pytorch
-
-6. cd $PYTORCH_ENV/bin
-
-7. source activate
+4. module load pytorch
+5. module load gcc
