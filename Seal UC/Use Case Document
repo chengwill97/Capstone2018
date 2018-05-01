@@ -1,0 +1,31 @@
+Biological Feature Detection:
+
+Description:
+
+This use case will entail of processing a set of images from the WorldView3 satellite and sorting these images into folders with the corresponding type of seal labeled. A pipeline will be created to achieve this goal. This pipeline will transfer the set of images to be predicted to a remote supercomputer, train a neural network model (using the Python package Pytorch) on a set of test images, predict how many and what kind of seals appear in each image, run a “blob detector” which displays the set of images with the detected seals highlighted, and return the images in folders with corresponding labels. The Ensemble Toolkit(entk) will be integrated to simplify the file transfer, job submission and file return.
+
+Requirements:
+        -Authentication to HPC resource (bridges)
+-RSA key verified by Pittsburgh Supercomputing Center to allow             passwordless ssh to Bridges (requirement for entk)
+-Test set of images to train neural network
+Modules:
+    -python3
+-cuda
+            -pytorch
+            -radical.entk
+            -tensorboardX
+Actors:
+User (initiating), Ensemble Toolkit(participating), Bridges Supercomputer (participating), Neural network model (participating)
+
+Preconditions:
+-High resolution satellite image which may or may not contain Arctic biological life.
+
+Postconditions:
+-Updated image with identified biological life.
+-Updated neural network.
+
+Flow of events for main success scenario:
+1. User executes code to submit pipeline to HPC resource
+2. Job sits in queue while resources are allocated
+3. Pipeline is executed on Bridges
+4. User is returned folders with images classified
