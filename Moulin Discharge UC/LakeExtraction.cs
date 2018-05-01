@@ -26,12 +26,12 @@ namespace LakeExtraction
         /// </summary>
         static void BandRatioTest()
         {
-            // string intputDirectoryName = @"D:\Analysis\Greenland_Analysis\GreenlandHighRes\StreamExtraction\multiinput\";
-            string intputDirectoryName = @"F:\Courtney\Greenland_Code\Courtney_Stream_Extraction\multiinput\";
-            //@"D:\2012Images\WorldView\geotiff\718\";
-            // string outputDirectoryName = @"D:\Analysis\Greenland_Analysis\GreenlandHighRes\StreamExtraction\multiinput\ndwi\";
-            string outputDirectoryName = @"F:\Courtney\Greenland_Code\Courtney_Stream_Extraction\multioutput\ndwi\";
-            //@"D:\2012Images\WorldView\geotiff\718\ndwi\";
+            // string intputDirectoryName = @"~\StreamExtraction\multiinput\";
+            string intputDirectoryName = @"~\Stream_Extraction\multiinput\";
+           
+            // string outputDirectoryName = @"~\StreamExtraction\multiinput\ndwi\";
+            string outputDirectoryName = @"~\Stream_Extraction\multioutput\ndwi\";
+            
 
             string[] files = System.IO.Directory.GetFiles(intputDirectoryName);
             for (int i = 0; i < files.Length; i++)
@@ -57,9 +57,9 @@ namespace LakeExtraction
 
         static void ExtractLargeStreams_BatchProcess()
         {
-            // string intputDirectoryName = @"D:\Analysis\Greenland_Analysis\GreenlandHighRes\StreamExtraction\multiinput\ndwi\";
-            // string intputDirectoryName = @"F:\Courtney\Greenland_Code\Courtney_Stream_Extraction\multiinput\ndwi\";
-            string intputDirectoryName = @"F:\Courtney\Greenland_Code\Courtney_Stream_Extraction\multioutput\ndwi\";
+            // string intputDirectoryName = @"~\StreamExtraction\multiinput\ndwi\";
+            // string intputDirectoryName = @"~\Stream_Extraction\multiinput\ndwi\";
+            string intputDirectoryName = @"~\StreamExtraction\multioutput\ndwi\";
             string[] files = System.IO.Directory.GetFiles(intputDirectoryName);
             for (int i = 0; i < files.Length; i++)
             {
@@ -84,7 +84,7 @@ namespace LakeExtraction
             string outputFileName = (System.IO.Path.GetFileNameWithoutExtension(inputFileName).Split('-'))[0];
 
             // string path = System.IO.Path.GetDirectoryName(inputFileName) + "\\";
-            string path = @"F:\Courtney\Greenland_Code\Courtney_Stream_Extraction\multioutput\watermask\";
+            string path = @"~\StreamExtraction\multioutput\watermask\";
 
             //increase this threshold for extracting lakes ~1.55
             //for streams, usually ~1.25; change for each strip
@@ -108,7 +108,7 @@ namespace LakeExtraction
         /// </summary>
         static void StreamExtractionTest4LargeImage_BatchProcess()
         {
-            string intputDirectoryName = @"D:\Analysis\Greenland_Analysis\GreenlandHighRes\StreamExtraction\output_ndwi\";
+            string intputDirectoryName = @"~\StreamExtraction\output_ndwi\";
 
             string[] files = System.IO.Directory.GetFiles(intputDirectoryName);
             for (int i = 0; i < files.Length; i++)
