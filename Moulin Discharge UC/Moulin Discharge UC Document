@@ -1,1 +1,44 @@
 
+Stream Delineation
+ 
+Descriptions
+o      Collaborators: Prof. Vena Chu, Ash Kondapalli, Raj Patel
+o      Field: Glaciology
+o      Requirements
+Access to PSC Bridges Supercomputer
+RSA key authentication from Bridges Key Management System to set up passwordless ssh for EnsembleToolkit
+Orthorectified WV-2 image of glacial sheet
+o      Measure of Success: Image with glacial streams delineated from other glacial features
+Platforms Used:
+o   Languages/Library: Python, C#, RADICAL EnsembleToolkit (EnTK), Globus Toolkit, OSGeo, ArcPy
+o   HPC System: PSC Bridges CPU (RM-shared partition)
+Primary Challenges: Provide a Pipeline on Bridges to run the stream delineation algorithms to process large amounts of images using EnTK’s PST Model
+
+Stages:
+o   Stage 1: Creating Directories/File Transferring
+o   Stage 2: NDWI_ice Image Conversion, Multi-threshold Water Extraction, Multi-points Fast Marching Method, Slush Elimination
+o   Stage 3: Morphological Closing/Thinning
+ 
+Step Breakdowns
+Stage 1
+First, a directory must be created named “StreamExtraction”, and within that folder another named “multiinput” and one named “multioutput”. The orthorectified imagery is then copied into ~/StreamExtraction/multiinput. Five more folders must be created within the “multioutput” folder, named “ndwi”, “thinned_img”, “thinned_shapefile”, and “watermask,” and “output_images”. The entire directory ~/StreamExtraction will then be transferred to the $SCRATCH, or pylon5, directory of Bridges via the Globus Toolkit.
+
+Stage 2
+A normalized difference water index (NDWI) is first used to extract the wet features of the WV-2 image. Through spectral discrimination, the image is converted to one in which the water features are extracted. Further water extraction is done through the use of different thresholds that select random pixels from streams and average their NDWI_ice values. The thresholds are determined based on the size of the streams the pixels are sampled from – t_low data comes from the smallest streams, t_mod larger streams, and t_high from lakes only. T_mod was selected as the most effective method as it identified the most amount of streams while eliminating most slush. A multi-points fast marching method is then used to reconnect streams that have been separated. However, small patches of slush will still remain, which will require an edge detection method used to eliminate the unnecessary slush regions left over. The StreamExtraction program was first compiled from its C# form into an .exe file to be able to run.
+Input Files: StreamExtraction.exe 
+Output: Updated images after multi-threshold water extraction and slush elimination
+Executable files: StreamExtraction.bat
+Est. time for completion: ~1 Hour
+Storage Space: ~700MB image
+Cores/Nodes: 2 Cores, 1 Node
+Walltime: 2 Hours requested
+ 
+Stage 3
+A morphological closing operation is used to fill in missing water pixels or remove isolated ones, since some streams become disconnecting due to pixels being removed during the water extraction process.
+Input: Thin_multi.py
+Output: Updated, pixel-reduced image after morphological closing and thinning is completed
+Executable files: Thin_multi.bat
+Est. time for completion: ~1 Hour
+Storage Space: ~700MB Image
+Cores/Nodes: 2 Cores, 1 Node
+Walltime: 2 Hours Requested
