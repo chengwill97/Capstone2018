@@ -3,13 +3,15 @@ from arcpy import env
 from arcpy.sa import *
 
 #set the workspace and list all of the raster dataset
-#env.workspace=r'D:\Analysis\Greenland_Analysis\GreenlandHighRes\StreamExtraction\multioutput\watermask\toprocess'
-env.workspace=r'F:\Courtney\Greenland_Code\Courtney_Stream_Extraction\multioutput\watermask'
+#env.workspace=r'~\StreamExtraction\multioutput\watermask\toprocess'
+
+env.workspace=r'~\StreamExtraction\multioutput\watermask'
 #r'D:\2012Images\WorldView\geotiff\730\resample\watermask'
+
 env.overwriteOutput=True
-#output=r'D:\Analysis\Greenland_Analysis\GreenlandHighRes\StreamExtraction\multioutput\watermask\toprocess\output'
-img_output=r'F:\Courtney\Greenland_Code\Courtney_Stream_Extraction\multioutput\thinned_img'
-shp_output=r'F:\Courtney\Greenland_Code\Courtney_Stream_Extraction\multioutput\thinned_shapefile'
+#output=r'~\StreamExtraction\multioutput\watermask\toprocess\output'
+img_output=r'~\StreamExtraction\multioutput\thinned_img'
+shp_output=r'~\StreamExtraction\multioutput\thinned_shapefile'
 #r'D:\2012Images\WorldView\geotiff\730\resample\watermask\output'
 
 arcpy.CheckOutExtension("Spatial")
